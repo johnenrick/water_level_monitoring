@@ -1,0 +1,31 @@
+-g
+-AL 2
+-ra _INRAM01=0x000100/0x0008FF
+-ro _INROM01=0xFF0000/0xFFFFFF
+-check_rora
+-check_locate
+-rg 0
+-m "C:\fews\Debug\LST\fews.mp1"
+-pl 60
+-pw 132
+-alin "C:\fews\Debug\LST"
+-alout "C:\fews\Debug\LST"
+-Xals
+-Xalr
+-na
+-w 1
+-cwno
+-a
+-cpu MB90F387
+-o "C:\fews\Debug\ABS\fews.abs"
+
+"C:\fews\Debug\OBJ\_FFMC16.obj"
+"C:\fews\Debug\OBJ\main.obj"
+"C:\fews\Debug\OBJ\monitor16LX.obj"
+"C:\fews\Debug\OBJ\start905s.obj"
+"C:\fews\Debug\OBJ\_io_prl01.obj"
+"C:\fews\Debug\OBJ\_io_prl23.obj"
+"C:\fews\Debug\OBJ\_io_tmr.obj"
+"C:\fews\Debug\OBJ\tasksched.obj"
+"C:\fews\Debug\OBJ\config.obj"
+

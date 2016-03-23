@@ -1,0 +1,17 @@
+-dt s,d,r,a
+-pl 60
+-pw 132
+-g
+-cwno
+-cpu MB90F387
+"C:\fews\Debug\ABS\fews.abs"
+-a "C:\fews\Debug\OBJ\_FFMC16.obj"
+-a "C:\fews\Debug\OBJ\main.obj"
+-a "C:\fews\Debug\OBJ\monitor16LX.obj"
+-a "C:\fews\Debug\OBJ\start905s.obj"
+-a "C:\fews\Debug\OBJ\_io_prl01.obj"
+-a "C:\fews\Debug\OBJ\_io_prl23.obj"
+-a "C:\fews\Debug\OBJ\_io_tmr.obj"
+-a "C:\fews\Debug\OBJ\tasksched.obj"
+-a "C:\fews\Debug\OBJ\config.obj"
+

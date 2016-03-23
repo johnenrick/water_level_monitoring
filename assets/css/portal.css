@@ -1,0 +1,47 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.full-height {
+    height: 100%;
+    min-height: 100%;
+}
+
+.fms-left-container {
+    background-color: #eeeff4;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.fms-left-container .fms-header {
+    height: 60px;
+    background-color: white;
+}
+
+.fms-left-container .fms-header h3 {
+    float: left;
+}
+
+.fms-left-container .fms-header a {
+    float: right;
+    margin-top: 10px;
+}
+
+.fms-left-container .fms-content {
+    padding-top: 20px;
+    max-height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+.fms-right-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+.canvasjs-chart-credit {
+    display: none !important;
+}
