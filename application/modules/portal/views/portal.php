@@ -10,13 +10,13 @@
     <!-- Material Design fonts -->
     <!--<link rel="stylesheet" href="<?=asset_url("font/font_style.css")?>" type="text/css">-->
     <link rel="stylesheet" href="<?=asset_url("css/font_style.css")?>" type="text/css">
-    <link href="css/icon.css" rel="stylesheet" type="text/css">
+    <link href="<?=asset_url("css/icon.css")?>" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap -->
     <link href="<?=asset_url("css/bootstrap.min.css")?>" rel="stylesheet">
 
     <!-- Bootstrap Material Design -->
-    <link href="<?=asset_url("css/bootstrap-material-design.css")?>" rel="stylesheet")?>">
+    <link href="<?=asset_url("css/bootstrap-material-design.css")?>" rel="stylesheet">
     <link href="<?=asset_url("css/ripples.min.css")?>" rel="stylesheet">
 
     <style>
@@ -228,7 +228,7 @@
                         <ul class="list-group unselectable">
                             <li class="list-group-item">
                                 <div class="col-md-5 col-sm-12 col-xs-5">
-                                    <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></h2>
+                                    <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <i class="material-icons fms-arrow fms-danger">arrow_upward</i></h2>
                                 </div>
                                 <div class=" col-md-7 col-sm-12 col-xs-7">
                                     <h4 class="fms-location capitalize">Bacayan, Cebu City, Cebu</h4>
@@ -344,7 +344,7 @@
                 </div>
             </div>
             <div class="col-md-12 full-height fms-right-container">
-                <div id="fms-map-container" class="col-md-12 full-height"></div>
+                <div id="fms-map-container" class="col-md-12 full-height no-padding"></div>
             </div>
 
             <div id="fms-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
@@ -387,7 +387,7 @@
 
     <!--  source http://canvasjs.com/html5-javascript-dynamic-chart/ -->
     <script type="text/javascript">
-        
+
     </script>
 
 
