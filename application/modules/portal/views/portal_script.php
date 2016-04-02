@@ -58,7 +58,7 @@
             var updateInterval = 1000;
             var dataLength = 500; // number of dataPoints visible at any point
 
-            var displayValue = function (e, val, prev_val) {
+            var displayValue = function (e, val, prev_val) {    
                 var container = $(e).closest('ul');
                 container.find('.fms-value').text(val);
                 if (val > prev_val)
@@ -70,7 +70,6 @@
             var updateChart = function (count) {
                 count = count || 1;
                 // count is number of times loop runs to generate random dataPoints.
-
                 for (var j = 0; j < count; j++) {
                     yVal = Math.abs(yVal + Math.round(5 + Math.random() * (-5 - 5)));
                     dps.push({
@@ -82,13 +81,27 @@
                 if (dps.length > dataLength) {
                     dps.shift();
                 }
-
-                
             
                  for(var ctr = 0; ctr < sensorList.length; ctr++){
+                    $.post(api_url("C_water_level/retrieveWaterLevel"), {device_ID: sensorList[ctr]["ID"]}, function(data){ 
+                        var level = JSON.parse(data);
+                        waterLevel = [];
+            
+                        if(!level["error"].length){
+
+                            for(var ctr = 0; ctr < level["data"].length; ctr++){
+                            level[data][ctr][level];
+                            displayValue('#sensor'+ctr, level[data][ctr][level], prev_yVal);
+                            }
+                            
+                        }else{
+                        console.log(level["error"][0]["message"]);
+                        }
+                    })
                         sensorList[ctr]["sensor_graph"].render();
                         displayValue('#sensor'+ctr, yVal, prev_yVal);
-                    }
+                        console.log(sensorList);
+                }
                        
                 prev_yVal = yVal;
             };
