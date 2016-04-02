@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "HelloWorld", "HelloWorld\HelloWorld.dsp", "{12D13267-6190-4A1D-A5F6-5459CE78292C}"
+	ProjectSection(DevStudioProjDeps) = postProject
+		0 = Serial
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Listener", "Listener\Listener.vcxproj", "{4345DC0E-36E8-4658-8FEF-146E3D66C73C}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "Overlapped", "Overlapped\Overlapped.dsp", "{AF6AB6F9-7E4C-4199-B131-920007DC09CF}"
+	ProjectSection(DevStudioProjDeps) = postProject
+		0 = Serial
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Serial", "Serial\Serial.vcxproj", "{D1EC6610-5909-4266-8935-E125F41B9680}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerialTestMFC", "SerialTestMFC\SerialTestMFC.vcxproj", "{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unicode|Win32 = Debug Unicode|Win32
+		Debug|Win32 = Debug|Win32
+		Release Unicode|Win32 = Release Unicode|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Debug|Win32.Build.0 = Debug|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Release|Win32.ActiveCfg = Release|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Release|Win32.Build.0 = Release|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Template|Win32.ActiveCfg = Release Unicode|Win32
+		{4345DC0E-36E8-4658-8FEF-146E3D66C73C}.Template|Win32.Build.0 = Release Unicode|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Debug|Win32.Build.0 = Debug|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Release|Win32.ActiveCfg = Release|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Release|Win32.Build.0 = Release|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Template|Win32.ActiveCfg = Template|Win32
+		{D1EC6610-5909-4266-8935-E125F41B9680}.Template|Win32.Build.0 = Template|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Debug|Win32.Build.0 = Debug|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Release Unicode|Win32.ActiveCfg = Release Unicode|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Release Unicode|Win32.Build.0 = Release Unicode|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Release|Win32.ActiveCfg = Release|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Release|Win32.Build.0 = Release|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Template|Win32.ActiveCfg = Template|Win32
+		{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
