@@ -130,7 +130,7 @@ HostVisible=1
 [DockControlLeft]
 Child=1,DockControlLeft_Child
 [RegisterForm]
-Position=0,0,20,568
+Position=0,0,20,235
 State=0
 Visible=1
 UndockedWidth=201
@@ -139,7 +139,10 @@ HostVisible=1
 [DockControlBottomRight]
 Child=0,RegisterForm
 [SourceFiles]
-SourceCount=0
+SourceCount=1
+Name_0=c:\fews\main.c
+[CodeView]
+Height=568
 [Disassember]
 ShowSourceLine=0
 Follow=1

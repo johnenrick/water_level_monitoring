@@ -3,6 +3,13 @@
 #include "monitor.h"
 void configureIO()
 {
+	/*indiciators
+		11
+		12
+		13
+		14
+	*/
+
 	/*IO Pins*/
 	IO_PDR1.bit.P10 = 0;
 	IO_DDR1.byte = 0x1E;//D10 as input
@@ -16,19 +23,19 @@ void configureIO()
 	IO_DDR2.bit.D24 = 0;//external interrupt	
 	
 	IO_DDR2.bit.D27 = 0;
-	
+	/*UART*/
 	IO_DDR4.bit.D42 = 1;//transmitting
+	IO_DDR4.bit.D41 = 0;//external uart clock
 	IO_DDR4.bit.D40 = 0;
 	//IO_DDR5.bit.D50 = 0;
 	/*Interrupt Priority*/
 	IO_ICR04.byte = 0x02;// free run
 	IO_ICR06.byte = 0x01;// free run input capture0/External
+	IO_ICR13.byte = 0x00;//uart
 	/*Transmit UART*/
-	IO_ICR13.byte = 0x00;
-	IO_CDCR1.byte = 0x80;
-	IO_SMR1.byte = 0x1;
-	IO_SCR1.byte = 0x15;
-	IO_SSR1.bit.TIE=1;
+	IO_CDCR1.byte = 0x80;//prescaler enabled
+	IO_SMR1.byte = 0x1;//enable serial data output
+	IO_SCR1.byte = 0x15;//receive data load flag, msb first, enable transmit interrupt
 	
 	/*Receive UART
 	IO_SCR1.byte = 0x17;

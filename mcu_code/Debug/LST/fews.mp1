@@ -1,4 +1,4 @@
-F2MC-16 Family SOFTUNE Linker Control List                                                      2016-03-07 01:55:55  Page:     1
+F2MC-16 Family SOFTUNE Linker Control List                                                      2016-04-02 16:16:10  Page:     1
 
 Option File(s)
   C:\fews\Debug\OPT\fews.opl
@@ -43,17 +43,17 @@ Input Module(s)
 Error(s)
      ** Nothing **
 
-F2MC-16 Family SOFTUNE Linker Mapping List                                                      2016-03-07 01:55:55  Page:     2
+F2MC-16 Family SOFTUNE Linker Mapping List                                                      2016-04-02 16:16:10  Page:     2
 
 S_Addr. -E_Addr.   Size      Section Type Al     Sec.(Top 81)                                                                      C
 00000000-000000BF  000000C0  IO    N RW-- 00 ABS  IO_REG
 00000100-........  00000000  DIR   P RW-- 02 REL  DIRDATA
 00000100-........  00000000  DIR   P RW-- 02 REL  DIRINIT
 00000100-00000101  00000002  DIR   P RW-- 02 REL  ASD
-00000102-00000115  00000014  DATA  P RW-- 02 REL  DATA
-00000116-00000119  00000004  DATA  P RW-- 02 REL  INIT
-0000011A-........  00000000  DATA  P RW-- 02 REL  LIBDATA
-0000011A-........  00000000  DATA  P RW-- 02 REL  LIBINIT
+00000102-00000103  00000002  DATA  P RW-- 02 REL  DATA
+00000104-........  00000000  DATA  P RW-- 02 REL  INIT
+00000104-........  00000000  DATA  P RW-- 02 REL  LIBDATA
+00000104-........  00000000  DATA  P RW-- 02 REL  LIBINIT
 00000180-0000018F  00000010  DATA  N RW-- 01 ABS  Register Bank No. 00
 00000190-0000038F  00000200  STACK P RW-- 01 REL  STACK
 00000880-000008FF  00000080  DATA  N RW-- 00 ABS  ACC_MDATA
@@ -61,17 +61,17 @@ S_Addr. -E_Addr.   Size      Section Type Al     Sec.(Top 81)                   
 00003900-00003903  00000004  DATA  N RW-- 00 ABS  IO_TMR
 00003910-00003913  00000004  DATA  N RW-- 00 ABS  IO_PRL01
 00003914-00003917  00000004  DATA  N RW-- 00 ABS  IO_PRL23
-00FF0000-00FF02AD  000002AE  CODE  P R-XI 01 REL  CODE
-00FF02AE-00FF02B1  00000004  CONST P R--I 02 REL  DCONST
-00FF02B2-........  00000000  DIRC  P R--I 02 REL  DIRCONST
-00FF02B2-........  00000000  CONST P R--I 02 REL  CONST
-00FF02B2-........  00000000  CONST P R--I 02 REL  LIBDCONST
-00FF02B2-........  00000000  CONST P R--I 02 REL  DTRANS
-00FF02B2-........  00000000  CONST P R--I 02 REL  DCLEAR
+00FF0000-00FF0275  00000276  CODE  P R-XI 01 REL  CODE
+00FF0276-........  00000000  DIRC  P R--I 02 REL  DIRCONST
+00FF0276-........  00000000  CONST P R--I 02 REL  DCONST
+00FF0276-........  00000000  CONST P R--I 02 REL  CONST
+00FF0276-........  00000000  CONST P R--I 02 REL  LIBDCONST
+00FF0276-........  00000000  CONST P R--I 02 REL  DTRANS
+00FF0276-........  00000000  CONST P R--I 02 REL  DCLEAR
 00FFA000-00FFBFFF  00002000  CONST N R--I 00 ABS  ACC_MCODE
 00FFFB00-00FFFBFF  00000100  CONST N R--I 00 ABS  ACC_UDATA
 00FFFC00-00FFFFDF  000003E0  CONST N R--I 00 ABS  INTVECT
-F2MC-16 Family SOFTUNE Linker Symbol List                                                       2016-03-07 01:55:55  Page:     3
+F2MC-16 Family SOFTUNE Linker Symbol List                                                       2016-04-02 16:16:10  Page:     3
 
 Symbol Value        Type   Def.  Symbol Name (Top 97)                                                                              C
  00000036(ABS)      Addr.  OM/LM @_IO_ADCRLH
@@ -131,7 +131,7 @@ Symbol Value        Type   Def.  Symbol Name (Top 97)                           
  0000008E(ABS)      Addr.  OM/LM @_IO_RIER
  0000006F(ABS)      Addr.  OM/LM @_IO_ROMM
  0000008C(ABS)      Addr.  OM/LM @_IO_ROVRR
-F2MC-16 Family SOFTUNE Linker Symbol List                                                       2016-03-07 01:55:55  Page:     4
+F2MC-16 Family SOFTUNE Linker Symbol List                                                       2016-04-02 16:16:10  Page:     4
 
 Symbol Value        Type   Def.  Symbol Name (Top 97)                                                                              C
  0000008A(ABS)      Addr.  OM/LM @_IO_RRTRR
@@ -144,36 +144,26 @@ Symbol Value        Type   Def.  Symbol Name (Top 97)                           
  00000058(ABS)      Addr.  OM/LM  _IO_TCCS
  00000056(ABS)      Addr.  OM/LM  _IO_TCDT
  00000086(ABS)      Addr.  OM/LM @_IO_TCR
- 00000066(ABS)      Addr.  OM/LM  _IO_TMCSR0
+ 00000066(ABS)      Addr.  OM/LM @_IO_TMCSR0
  00000068(ABS)      Addr.  OM/LM @_IO_TMCSR1
- 00003900(ABS)      Addr.  OM/LM  _IO_TMR
+ 00003900(ABS)      Addr.  OM/LM @_IO_TMR
  00000082(ABS)      Addr.  OM/LM @_IO_TREQR
  000000A8(ABS)      Addr.  OM/LM @_IO_WDTC
  000000AA(ABS)      Addr.  OM/LM @_IO_WTC
- 00FF017F(ABS)      Addr.  OM/LM @_TimerOFF
- 00FF0178(ABS)      Addr.  OM/LM @_TimerON
- 00FF016C(ABS)      Addr.  OM/LM @_TimerSet
- 00FF009E(ABS)      Addr.  OM/LM  __start
+ 00FF00C5(ABS)      Addr.  OM/LM  __start
  00000100(ABS)      Addr.  OM/LM @_a
  00FFA014(ABS)      Addr.  OM/LM @_acc_KernelUART
  00FFA018(ABS)      Addr.  OM/LM @_acc_MessageBox
  00FFA020(ABS)      Addr.  OM/LM @_acc_SetLockState
  00FFA010(ABS)      Addr.  OM/LM @_acc_WatchdogEnable
  00FFA01C(ABS)      Addr.  OM/LM @_acc_printf
- 00FF0059(ABS)      Addr.  OM/LM @_capture_int
- 00FF025B(ABS)      Addr.  OM/LM  _configureIO
+ 00FF006F(ABS)      Addr.  OM/LM @_capture_int
+ 00FF0223(ABS)      Addr.  OM/LM  _configureIO
  00FF0000(ABS)      Addr.  OM/LM @_delay
- 00FF008E(ABS)      Addr.  OM/LM @_ext_int
- 00000116(ABS)      Addr.  OM/LM  _freeRunOF
- 00FF007E(ABS)      Addr.  OM/LM @_freerun_int
- 00FF0186(ABS)      Addr.  OM/LM @_loadTask
+ 00FF00B8(ABS)      Addr.  OM/LM @_ext_int
+ 00FF0095(ABS)      Addr.  OM/LM @_freerun_int
+ 00000102(ABS)      Addr.  OM/LM  _isReadingDistance
  00FF0013(ABS)      Addr.  OM/LM  _main
- 00000104(ABS)      Addr.  OM/LM @_periodSequence
- 00000106(ABS)      Addr.  OM/LM @_periodToggle
- 00000102(ABS)      Addr.  OM/LM  _processingRdyTasks
- 00FF0219(ABS)      Addr.  OM/LM  _readDistance
- 00FF0204(ABS)      Addr.  OM/LM @_readUART
- 00FF01F2(ABS)      Addr.  OM/LM  _sendUART
- 0000010A(ABS)      Addr.  OM/LM  _tasks
- 00000108(ABS)      Addr.  OM/LM  _tasksPeriodGCD
- 00000118(ABS)      Addr.  OM/LM  _waterLevel
+ 00FF01E1(ABS)      Addr.  OM/LM  _readDistance
+ 00FF01A5(ABS)      Addr.  OM/LM  _readUART
+ 00FF0193(ABS)      Addr.  OM/LM  _sendUART
