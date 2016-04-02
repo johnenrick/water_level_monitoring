@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <SccProjectName />
     <SccLocalPath />
-    <ProjectGuid>{775FCFEB-87D2-4450-92A0-F1A53F2F94B3}</ProjectGuid>
+    <ProjectGuid>{5DF65053-9A71-47FB-B539-E7D61D500709}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Unicode|Win32'" Label="Configuration">
@@ -253,7 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Serial\Serial.vcxproj">
-      <Project>{af52dd6c-277a-417a-aaf3-1e429033a6ba}</Project>
+      <Project>{89b497a3-bc4e-4b8c-a322-c8f7ec4e3c7c}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

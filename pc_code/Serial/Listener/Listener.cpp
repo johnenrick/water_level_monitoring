@@ -25,7 +25,7 @@
 
 
 enum { EOF_Char = 27 };
-
+char* readMCU(char *comd);
 int ShowError (LONG lError, LPCTSTR lptszMessage)
 {
 	// Generate a message text
@@ -36,11 +36,12 @@ int ShowError (LONG lError, LPCTSTR lptszMessage)
 	::MessageBox(0,tszMessage,_T("Listener"), MB_ICONSTOP|MB_OK);
 	return 1;
 }
-
+CSerial serial;
+LONG    lLastError;
 int __cdecl _tmain (int /*argc*/, char** /*argv*/)
 {
-    CSerial serial;
-	LONG    lLastError = ERROR_SUCCESS;
+    
+	lLastError = ERROR_SUCCESS;
     // Attempt to open the serial port (COM1)
     lLastError = serial.Open(_T("COM3"),0,0,false);
 	if (lLastError != ERROR_SUCCESS)
@@ -67,38 +68,50 @@ int __cdecl _tmain (int /*argc*/, char** /*argv*/)
 	if (lLastError != ERROR_SUCCESS)
 		return ::ShowError(serial.GetLastError(), _T("Unable to set COM-port read timeout."));
 
+	/*******/
     // Keep reading data, until an EOF (CTRL-Z) has been received
-	bool fContinue = true;
-	int charToSend = 0;
-	DWORD distance = 3;
-	do
-	{
-		DWORD dwBytesRead = 0;
-		char szBuffer[101];
-		
-		do
-		{
-			lLastError = serial.Read(szBuffer,sizeof(szBuffer)-1,&dwBytesRead);
-			if (lLastError != ERROR_SUCCESS)
-				return ::ShowError(serial.GetLastError(), _T("Unable to read from COM-port."));
-
-			if (dwBytesRead > 0)
-			{
-				szBuffer[dwBytesRead] = '\0';
-				distance = (szBuffer[0] << 8) + (szBuffer[1] & 0x00FF) ;
-				//printf("%i %i  = %d = %d us -> %d cm \n", szBuffer[0], szBuffer[1], distance, ((distance)/116.00));
-				//printf("<<8 = %d\n", (szBuffer[0] << 8));
-				printf("%i", szBuffer[0]);
-				if (strchr(szBuffer,EOF_Char))
-					fContinue = false;
-			}
-		}
-		while (dwBytesRead == sizeof(szBuffer)-1);
-	//	serial.Write("A");
-		Sleep(500);
+	char *szBuffer;
+	
+	while (1){
+		readMCU("A");
+		Sleep(1000);
 	}
-	while (1);
+	
     // Close the port again
+	
     serial.Close();
     return 0;
+}
+
+char * readMCU(char * comd){
+	bool fContinue = true;
+	int charToSend = 0;
+	do{
+		DWORD dwBytesRead = 0;
+		char szBuffer[101];
+		DWORD distance = 0;
+		
+		do{
+			serial.Write(comd);
+			lLastError = serial.Read(szBuffer, sizeof(szBuffer)-1, &dwBytesRead);
+			if (lLastError != ERROR_SUCCESS){
+				::ShowError(serial.GetLastError(), _T("Unable to read from COM-port."));
+				return 0;
+			}
+			if (dwBytesRead > 0){
+				szBuffer[dwBytesRead] = '\0';
+				distance = (szBuffer[0] << 8) + (szBuffer[1] & 0x00FF);
+				printf("\n%i %i  = %d us = %d cm \n", szBuffer[0], szBuffer[1], distance, ((distance) / (DWORD)116.00));
+				if (strchr(szBuffer, EOF_Char)){
+					fContinue = false;
+				}
+				return szBuffer;
+			}
+			else{
+				printf(".");
+			}
+		} while (dwBytesRead == sizeof(szBuffer)-1);
+		Sleep(100);
+	} while (fContinue);
+
 }

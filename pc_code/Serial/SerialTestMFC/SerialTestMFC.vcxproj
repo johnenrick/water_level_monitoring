@@ -26,7 +26,7 @@
     <SccProjectName />
     <SccLocalPath>Desktop</SccLocalPath>
     <Keyword>MFCProj</Keyword>
-    <ProjectGuid>{B252D8A7-83FC-4DAA-9091-8A4F1A41077C}</ProjectGuid>
+    <ProjectGuid>{87BDCC50-48D6-41EB-B853-5C841772FB9F}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" Label="Configuration">
@@ -321,7 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Serial\Serial.vcxproj">
-      <Project>{d1ec6610-5909-4266-8935-e125f41b9680}</Project>
+      <Project>{89b497a3-bc4e-4b8c-a322-c8f7ec4e3c7c}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
