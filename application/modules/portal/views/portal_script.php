@@ -1,43 +1,56 @@
 <script>
+    /*global CanvasJS*/
     $.material.init();
+    $('.fms-header .badge').text($('.fms-content .panel').size() + " sensors");
+
+    var dps = []; // dataPoints
+    var colors = ["#009688", "#4caf50", "#03a9f4", "#ff5722", "#f44336"];
+    var sensorList = [];
+
+    var chart_settings = function (dpoints, color) {
+            return {
+                data: [{
+                    type: "splineArea",
+                    color: color,
+                    dataPoints: dpoints
+            }]
+            };
+        }
+        // themes
+    var fms_primary = function (dpoints) {
+        return chart_settings(dpoints, "#009688");
+    };
+    var fms_success = function (dpoints) {
+        return chart_settings(dpoints, "#4caf50");
+    };
+    var fms_info = function (dpoints) {
+        return chart_settings(dpoints, "#03a9f4");
+    };
+    var fms_warning = function (dpoints) {
+        return chart_settings(dpoints, "#ff5722");
+    };
+    var fms_danger = function (dpoints) {
+        return chart_settings(dpoints, "#f44336");
+    };
     $(document).ready(function () {
 
-            $('.fms-header .badge').text($('.fms-content .panel').size() + " sensors");
-
-            var dps = []; // dataPoints
-
-            var chart_settings = function (dpoints, color) {
-                    return {
-                        data: [{
-                            type: "splineArea",
-                            color: color,
-                            dataPoints: dpoints
-                    }]
-                    };
+            /*Create Sensor List*/
+            $.post(api_url("C_device/retrieveDevice"), {}, function(data){
+                var response = JSON.parse(data);
+                sensorList = [];
+                if(!response["error"].length){
+                    sensorList = response["data"];
+                    for(var ctr = 0; ctr < response["data"].length; ctr++){
+                        var sensorPanel = $("#prototype").find(".sensorPanel").clone();
+                        sensorPanel.find(".fms-location").text(response["data"][ctr]["description"]);
+                        sensorPanel.find(".fms-graph").attr("id", "sensor"+ctr);
+                        sensorList[ctr]["sensor_graph"] = new CanvasJS.Chart("sensor"+ctr, fms_primary(dps));
+                        $("#fms-sensor-container").append(sensorPanel);
+                    }
+                }else{
+                    console.log(response["error"][0]["message"]);
                 }
-                // themes
-            var fms_primary = function (dpoints) {
-                return chart_settings(dpoints, "#009688");
-            }
-            var fms_success = function (dpoints) {
-                return chart_settings(dpoints, "#4caf50");
-            }
-            var fms_info = function (dpoints) {
-                return chart_settings(dpoints, "#03a9f4");
-            }
-            var fms_warning = function (dpoints) {
-                return chart_settings(dpoints, "#ff5722");
-            }
-            var fms_danger = function (dpoints) {
-                return chart_settings(dpoints, "#f44336");
-            }
-
-            var sensor1 = new CanvasJS.Chart("sensor1", fms_primary(dps));
-            var sensor2 = new CanvasJS.Chart("sensor2", fms_success(dps));
-            var sensor3 = new CanvasJS.Chart("sensor3", fms_info(dps));
-            var sensor4 = new CanvasJS.Chart("sensor4", fms_warning(dps));
-            var sensor5 = new CanvasJS.Chart("sensor5", fms_danger(dps));
-
+            })
 
             var xVal = 0;
             var yVal = 100;
@@ -74,17 +87,6 @@
                 sensor1.render();
                 displayValue('#sensor1', yVal, prev_yVal);
 
-                sensor2.render();
-                displayValue('#sensor2', yVal, prev_yVal);
-
-                sensor3.render();
-                displayValue('#sensor3', yVal, prev_yVal);
-
-                sensor4.render();
-                displayValue('#sensor4', yVal, prev_yVal);
-
-                sensor5.render();
-                displayValue('#sensor5', yVal, prev_yVal);
 
                 prev_yVal = yVal;
             };
@@ -111,7 +113,7 @@
             });
 
             // display chart
-            $(".panel").click(function () {
+            $("#fms-sensor-container").on("click", ".panel",function () {
                 $(this).find('.fms-graph-container').slideToggle();
             });
 

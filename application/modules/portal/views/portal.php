@@ -217,130 +217,7 @@
                     </div>
                 </div>
                 <div id="fms-sensor-container" class="col-md-12 fms-content scroll-shadow">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <span class="fms-sensor-name">Sensor 1</span>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">delete_forever</i></a>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
-
-                        </div>
-                        <!-- List group -->
-                        <ul class="list-group unselectable">
-                            <li class="list-group-item">
-                                <div class="col-md-5 col-sm-12 col-xs-5">
-                                    <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <i class="material-icons fms-arrow fms-danger">arrow_upward</i></h2>
-                                </div>
-                                <div class=" col-md-7 col-sm-12 col-xs-7">
-                                    <h4 class="fms-location capitalize">Bacayan, Cebu City, Cebu</h4>
-                                </div>
-                            </li>
-                            <li class="list-group-item fms-graph-container">
-                                <hr>
-                                <div id="sensor1" class="fms-graph">
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <span class="fms-sensor-name">Sensor 2</span>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">delete_forever</i></a>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
-
-                        </div>
-
-                        <!-- List group -->
-                        <ul class="list-group unselectable">
-                            <li class="list-group-item">
-                                <div class="col-md-5 col-sm-12 col-xs-5">
-                                    <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <i class="material-icons fms-arrow fms-danger">arrow_upward</i></h2>
-                                </div>
-                                <div class=" col-md-7 col-sm-12 col-xs-7">
-                                    <h4 class="fms-location capitalize">Bacayan, Cebu City, Cebu</h4>
-                                </div>
-                            </li>
-                            <li class="list-group-item fms-graph-container">
-                                <hr>
-                                <div id="sensor2" class="fms-graph">
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <span class="fms-sensor-name">Sensor 3</span>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">delete_forever</i></a>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
-
-                        </div>
-
-                        <!-- List group -->
-                        <ul class="list-group unselectable">
-                            <li class="list-group-item">
-                                <div class="col-md-5 col-sm-12 col-xs-5">
-                                    <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <i class="material-icons fms-arrow fms-danger">arrow_upward</i></h2>
-                                </div>
-                                <div class=" col-md-7 col-sm-12 col-xs-7">
-                                    <h4 class="fms-location capitalize">Bacayan, Cebu City, Cebu</h4>
-                                </div>
-                            </li>
-                            <li class="list-group-item fms-graph-container">
-                                <hr>
-                                <div id="sensor3" class="fms-graph">
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="panel panel-warning">
-                        <div class="panel-heading">
-                            <span class="fms-sensor-name">Sensor 4</span>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">delete_forever</i></a>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
-
-                        </div>
-
-                        <!-- List group -->
-                        <ul class="list-group unselectable">
-                            <li class="list-group-item">
-                                <div class="col-md-5 col-sm-12 col-xs-5">
-                                    <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <i class="material-icons fms-arrow fms-danger">arrow_upward</i></h2>
-                                </div>
-                                <div class=" col-md-7 col-sm-12 col-xs-7">
-                                    <h4 class="fms-location capitalize">Bacayan, Cebu City, Cebu</h4>
-                                </div>
-                            </li>
-                            <li class="list-group-item fms-graph-container">
-                                <hr>
-                                <div id="sensor4" class="fms-graph">
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="panel panel-danger">
-                        <div class="panel-heading">
-                            <span class="fms-sensor-name">Sensor 5</span>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">delete_forever</i></a>
-                            <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
-
-                        </div>
-
-                        <!-- List group -->
-                        <ul class="list-group unselectable">
-                            <li class="list-group-item">
-                                <div class="col-md-5 col-sm-12 col-xs-5">
-                                    <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <i class="material-icons fms-arrow fms-danger">arrow_upward</i></h2>
-                                </div>
-                                <div class=" col-md-7 col-sm-12 col-xs-7">
-                                    <h4 class="fms-location capitalize">Bacayan, Cebu City, Cebu</h4>
-                                </div>
-                            </li>
-                            <li class="list-group-item fms-graph-container">
-                                <hr>
-                                <div id="sensor5" class="fms-graph">
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-md-12 full-height fms-right-container">
@@ -366,7 +243,31 @@
             </div>
         </div>
     </div>
-
+    <div id="prototype" style="display:none">
+        <div class="panel panel-primary sensorPanel">
+            <div class="panel-heading">
+                <span class="fms-sensor-name">Sensor 1</span>
+                <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">delete_forever</i></a>
+                <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
+            </div>
+            <!-- List group -->
+            <ul class="list-group unselectable">
+                <li class="list-group-item">
+                    <div class="col-md-5 col-sm-12 col-xs-5">
+                        <h2><span class="fms-value">20</span> <span class="fms-unit">m</span> <i class="material-icons fms-arrow fms-danger">arrow_upward</i></h2>
+                    </div>
+                    <div class=" col-md-7 col-sm-12 col-xs-7">
+                        <h4 class="fms-location capitalize">Bacayan, Cebu City, Cebu</h4>
+                    </div>
+                </li>
+                <li class="list-group-item fms-graph-container">
+                    <hr>
+                    <div  class="fms-graph">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
     <!-- jQuery -->
     <script type="text/javascript" src="<?=asset_url("js/jquery-2.1.4.min.js")?>"></script>
     <script type="text/javascript" src="<?=asset_url("js/jquery-ui.min.js")?>"></script>
