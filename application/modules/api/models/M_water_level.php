@@ -7,35 +7,37 @@
  */
 
 /**
- * Description of m_sample_template
+ * Description of m_water_level
  *
  * @author johnenrick
  */
-class M_sample_template extends API_Model{
+class M_water_level extends API_Model{
     public function __construct() {
         parent::__construct();
-        $this->TABLE = "sample_template";
+        $this->TABLE = "water_level";
     }
-    public function createSampleTemplate($firstParameter){
+    public function createWaterLevel($firstParameter){
         $newData = array(
-            "first_parameter" => $firstParameter
+            "device_ID" => $deviceID,
+            "measurement" => $measurement,
+            "datetime" => $datetime
         );
         return $this->createTableEntry($newData);
     }
-    public function retrieveSampleTemplate($retrieveType = false, $limit = NULL, $offset = 0, $sort = array(), $ID = NULL, $condition = NULL) {
+    public function retrieveWaterLevel($retrieveType = false, $limit = NULL, $offset = 0, $sort = array(), $ID = NULL, $condition = NULL) {
         $joinedTable = array(
             
         );
         $selectedColumn = array(
-            "sample_template.*"
+            "water_level.*"
         );
         
         return $this->retrieveTableEntry($retrieveType, $limit, $offset, $sort, $ID, $condition, $selectedColumn, $joinedTable);
     }
-    public function updateSampleTemplate($ID = NULL, $condition = array(), $newData = array()) {
+    public function updateWaterLevel($ID = NULL, $condition = array(), $newData = array()) {
         return $this->updateTableEntry($ID, $condition, $newData);
     }
-    public function deleteSampleTemplate($ID = NULL, $condition = array()){
+    public function deleteWaterLevel($ID = NULL, $condition = array()){
         return $this->deleteTableEntry($ID, $condition);
     }
 }
