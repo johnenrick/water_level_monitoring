@@ -42,10 +42,10 @@
                     sensorList = response["data"];
                     for(var ctr = 0; ctr < response["data"].length; ctr++){
                         var sensorPanel = $("#prototype").find(".sensorPanel").clone();
+                        $("#fms-sensor-container").append(sensorPanel);
                         sensorPanel.find(".fms-location").text(response["data"][ctr]["description"]);
                         sensorPanel.find(".fms-graph").attr("id", "sensor"+ctr);
                         sensorList[ctr]["sensor_graph"] = new CanvasJS.Chart("sensor"+ctr, fms_primary(dps));
-                        $("#fms-sensor-container").append(sensorPanel);
                     }
                 }else{
                     console.log(response["error"][0]["message"]);
@@ -83,11 +83,13 @@
                     dps.shift();
                 }
 
-
-                sensor1.render();
-                displayValue('#sensor1', yVal, prev_yVal);
-
-
+                
+            
+                 for(var ctr = 0; ctr < sensorList.length; ctr++){
+                        sensorList[ctr]["sensor_graph"].render();
+                        displayValue('#sensor'+ctr, yVal, prev_yVal);
+                    }
+                       
                 prev_yVal = yVal;
             };
 
