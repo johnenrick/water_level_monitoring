@@ -18,15 +18,13 @@ class C_water_level extends API_Controller {
     public function createWaterLevel(){
         $this->accessNumber = 1;
         if($this->checkACL()){
-            $this->form_validation->set_rules('device_ID', 'First Parameter', 'required');
-            $this->form_validation->set_rules('measurement', 'First Parameter', 'required');
-            $this->form_validation->set_rules('datetime', 'First Parameter', 'required');
+            $this->form_validation->set_rules('device_ID', 'Device', 'required');
+            $this->form_validation->set_rules('measurement', 'Measurement', 'required');
             
             if($this->form_validation->run()){
                 $result = $this->m_water_level->createWaterLevel(
                         $this->input->post("device_ID"),
-                        $this->input->post("measurement"),
-                        $this->input->post("datetime")
+                        $this->input->post("measurement")
                         );
                 if($result){
                     $this->actionLog($result);

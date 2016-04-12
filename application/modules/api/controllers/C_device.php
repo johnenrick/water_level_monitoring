@@ -87,6 +87,7 @@ class C_device extends API_Controller {
                     $this->input->post("condition"),
                     $this->input->post("updated_data")
                     );
+            $this->responseDebug($this->input->post("updated_data"));
             if($result){
                 $this->actionLog(json_encode($this->input->post()));
                 $this->responseData($result);

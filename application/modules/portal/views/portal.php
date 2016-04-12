@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>F-M-S</title>
+    <title>W-M-S</title>
 
     <!-- Material Design fonts -->
     <!--<link rel="stylesheet" href="<?=asset_url("font/font_style.css")?>" type="text/css">-->
@@ -210,10 +210,10 @@
             <div class="col-md-4 col-sm-5 col-xs-12 full-height fms-left-container">
                 <div class="col-md-12 fms-header">
                     <div class="col-md-10 no-padding">
-                        <h3>Flood Monitoring System <span class="badge"></span></h3>
+                        <h3>Flood Monitoring System <span id="sensorQuantity" class="badge"></span></h3>
                     </div>
                     <div class="col-md-2 no-padding">
-                        <a id="fms-add-sensor" class="btn btn-default btn-fab btn-fab-mini" data-toggle="modal" data-target="#fms-modal"><i class="material-icons">add</i></a>
+                        <!--<a id="fms-add-sensor" class="btn btn-default btn-fab btn-fab-mini" data-toggle="modal" data-target="#fms-modal"><i class="material-icons">add</i></a>-->
                     </div>
                 </div>
                 <div id="fms-sensor-container" class="col-md-12 fms-content scroll-shadow">
@@ -229,14 +229,33 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title">Modal title</h4>
+                            <h4 class="modal-title">Sensor Detail</h4>
                         </div>
                         <div class="modal-body">
-                            <p>One fine body…</p>
+                            <form id="editSensorSettingForm" class="form-horizontal" method="POST">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 ">Description </label>
+                                    <div class="col-sm-10">
+                                        <input name="ID" type="hidden">    
+                                        <input name="updated_data[description]" type="text" class="form-control">    
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 ">Location </label>
+                                    <div class="col-sm-10">
+                                        <input name="updated_data[longitude]" type="hidden">
+                                        <input name="updated_data[latitude]" type="hidden">
+                                        <strong>Latitude</strong> : <span id="sensorSettingLatitude">123.123</span>&nbsp;&nbsp;
+                                        <strong>Longitude </strong>: <span id="sensorSettingLongitude" class="">123.123</span>
+                                        <br>
+                                        <button id="editSensorSettingChangeLocation" class="btn btn-success"><span class="glyphicon glyphicon-map-marker" aria-hidden="true" ></span> Change Location</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button id="editSensorSettingSubmit" type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
@@ -247,8 +266,7 @@
         <div class="panel panel-primary sensorPanel">
             <div class="panel-heading">
                 <span class="fms-sensor-name">Sensor 1</span>
-                <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">delete_forever</i></a>
-                <a class="btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
+                <a class="editSensor btn btn-default btn-fab btn-fab-mini"><i class="material-icons">edit</i></a>
             </div>
             <!-- List group -->
             <ul class="list-group unselectable">
@@ -278,6 +296,7 @@
     <!-- Material Design for Bootstrap -->
     <script type="text/javascript" src="<?=asset_url("js/material.js")?>"></script>
     <script type="text/javascript" src="<?=asset_url("js/ripples.min.js")?>"></script>
+    <script type="text/javascript" src="<?=asset_url("js/jquery.form.min.js")?>"></script>
     <script>
         $.material.init();
     </script>

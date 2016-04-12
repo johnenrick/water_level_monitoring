@@ -16,11 +16,11 @@ class M_water_level extends API_Model{
         parent::__construct();
         $this->TABLE = "water_level";
     }
-    public function createWaterLevel($firstParameter){
+    public function createWaterLevel($deviceID, $measurement){
         $newData = array(
             "device_ID" => $deviceID,
             "measurement" => $measurement,
-            "datetime" => $datetime
+            "datetime" => time()
         );
         return $this->createTableEntry($newData);
     }
